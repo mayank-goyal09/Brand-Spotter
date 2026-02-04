@@ -11,20 +11,4 @@ git clone <your-repo-url>
 cd "project 45 logo CNN"
 ```
 
-### 2. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the App
-```bash
-streamlit run app.py
-```
-
-- Facebook
-- Google
-- Nike
-- YouTube
-
-## 🤝 Contributing
-Feel free to open issues or submit pull requests if you want to add more brands to the dataset!
+### 2. Ins
