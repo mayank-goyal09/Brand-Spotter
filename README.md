@@ -21,20 +21,6 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## 📂 Project Structure
-
-```
-project 45 logo CNN/
-├── app.py                  # Main Streamlit Application
-├── main_new.ipynb         # Improved Training Notebook (Transfer Learning)
-├── main.ipynb             # Original Training Experiment
-├── logo_classifier_final.keras  # Saved Trained Model
-├── requirements.txt       # Project Dependencies
-└── data/                  # Dataset Directory
-    └── logos_small/       # Train/Val Split
-```
-
-## 📊 Supported Brands
 - Facebook
 - Google
 - Nike
