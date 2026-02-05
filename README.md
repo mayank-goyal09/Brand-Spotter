@@ -1,20 +1,6 @@
 # LogoLens 🔍 - AI Logo Classifier
 
-![Project Banner](https://img.shields.io/badge/Status-Active-success) ![Accuracy](https://img.shields.io/badge/Accuracy-97.6%25-brightgreen) ![Tech](https://img.shields.io/badge/Tech-TensorFlow%20%7C%20MobileNetV2%20%7C%20Streamlit-blue)
-
-A professional, high-accuracy Deep Learning application capable of identifying brand logos from images. Built using **Transfer Learning** with MobileNetV2 architecture to achieve exceptional performance even with small datasets.
-er Learning** approach to solve the problem of limited training data.
-
-1.  **Base Model**: MobileNetV2 (Pre-trained on ImageNet), frozen initially.
-2.  **Head**:
-    -   `GlobalAveragePooling2D` (Preserves spatial info better than Flatten)
-    -   `BatchNormalization` (Stabilizes training)
-    -   `Dropout (0.5)` (Prevents overfitting)
-    -   `Dense (Softmax)` (Final classification)
-3.  **Training Strategy**:
-    -   **Stage 1**: Train only the head (30 epochs, LR=1e-3).
-    -   **Stage 2**: Unfreeze top 30 layers of MobileNetV2 and fine-tune (15 epochs, LR=1e-5).
-
+![Project Banner](https://img.shields.io/badge/Status-Active-success) ![Accuracy](https://img.shields.io/badge/Accuracy-97.6%25-brightgreen) ![Tech](https://img.shields.io/badge/Tec
 ## 🛠️ Installation & Usage
 
 ### 1. Clone the repository
