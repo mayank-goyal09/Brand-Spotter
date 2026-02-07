@@ -312,3 +312,57 @@ After struggling with the failing custom CNN, I turned to **Antigravity (AI Codi
 - ✅ **AI-Assisted Development** — Using AI tools effectively
 
 ---
+
+## 🔮 **FUTURE ENHANCEMENTS** 🔮
+
+- [ ] Add more brand classes (Adidas, Puma, Apple, etc.)
+- [ ] Implement confidence thresholding for "Unknown" logos
+- [ ] Add Grad-CAM visualization to show model attention
+- [ ] Deploy on Hugging Face Spaces for wider reach
+- [ ] Create a mobile app version (TensorFlow Lite)
+- [ ] Add real-time webcam logo detection
+
+---
+
+## 🤝 **CONTRIBUTING** 🤝
+
+Contributions are **always welcome**! 🎉
+
+1. 🍴 Fork the Project
+2. 🌱 Create your Feature Branch (`git checkout -b feature/NewBrand`)
+3. 💾 Commit your Changes (`git commit -m 'Add Adidas logo class'`)
+4. 📤 Push to the Branch (`git push origin feature/NewBrand`)
+5. 🎁 Open a Pull Request
+
+---
+
+## 📝 **LICENSE** 📝
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+---
+
+## 👨‍💻 **CONNECT WITH ME** 👨‍💻
+
+[![GitHub](https://img.shields.io/badge/GitHub-mayank--goyal09-181717?style=for-the-badge&logo=github)](https://github.com/mayank-goyal09)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mayank_Goyal-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/mayank-goyal-4b8756363/)
+[![Email](https://img.shields.io/badge/Email-itsmaygal09@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:itsmaygal09@gmail.com)
+
+**Mayank Goyal**
+📊 Data Analyst | 🤖 ML Enthusiast | 🐍 Python Developer
+💼 Data Analyst Intern @ SpacECE Foundation India
+
+---
+
+## ⭐ **SHOW YOUR SUPPORT** ⭐
+
+Give a ⭐️ if this project taught you something about **transfer learning** and **micro-dataset challenges**!
+
+### 🔍 **Built with Persistence, Transfer Learning & AI-Powered Development** 🔍
+
+**"From 60% accuracy failure to 97% success—proof that the right approach beats more data."** 🚀
+
+---
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer)
+
