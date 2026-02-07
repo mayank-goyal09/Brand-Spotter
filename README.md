@@ -1,69 +1,92 @@
-# LogoLens 🔍 - AI Logo Classifier
+# 🔍🧠 BRAND-SPOTTER: AI Logo Recognition 🧠🔍
 
-![Project Banner](https://img.shields.io/badge/Status-Active-success) ![Accuracy](https://img.shields.io/badge/Accuracy-97.6%25-brightgreen) ![Tech](https://img.shields.io/badge/Tech-TensorFlow%20%7C%20MobileNetV2%20%7C%20Streamlit-blue)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=00C9FF&center=true&vCenter=true&width=1000&lines=Transfer+Learning+Logo+Classifier;MobileNetV2+%2B+Fine-Tuning+Pipeline;Only+~50+Images+Per+Class!;97%25+Accuracy+on+Micro-Dataset;A+Journey+of+Problem-Solving+%26+AI-Powered+Development)](https://git.io/typing-svg)
 
-A professional, high-accuracy Deep Learning application capable of identifying brand logos from images. Built using **Transfer Learning** with MobileNetV2 architecture to achieve exceptional performance even with small datasets.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Streamlit-FF4B4B?style=for-the-badge)](https://brand-spotter-projecttt.streamlit.app/)
+[![GitHub Stars](https://img.shields.io/github/stars/mayank-goyal09/Brand-Spotter?style=for-the-badge)](https://github.com/mayank-goyal09/Brand-Spotter/stargazers)
 
 ---
 
-## 🚀 Features
+<p align="center">
+  <img src="assets/image.png" alt="AI Logo Recognition Banner" width="800"/>
+</p>
 
-- **High Accuracy (97%+)**: Utilizing the power of pre-trained ImageNet weights.
-- **Robustness**: Trained with aggressive data augmentation to handle various angles, lighting, and orientations.
-- **Micro-Dataset Learning**: Capable of learning robust features from as few as ~15 images per class using 2-stage training (Frozen Base -> Fine Tuning).
-- **Interactive UI**: A stunning dark-mode web application built with Streamlit for real-time predictions.
+---
 
-## 🧠 Model Architecture
+### 🔍 **Classify brand logos with 97%+ accuracy using just ~50 images per class** 🎯
 
-We moved away from a custom "from-scratch" CNN to a **Transfer Learning** approach to solve the problem of limited training data.
+### 🧠 Transfer Learning × MobileNetV2 = **Micro-Data Mastery** 💪
 
-1.  **Base Model**: MobileNetV2 (Pre-trained on ImageNet), frozen initially.
-2.  **Head**:
-    -   `GlobalAveragePooling2D` (Preserves spatial info better than Flatten)
-    -   `BatchNormalization` (Stabilizes training)
-    -   `Dropout (0.5)` (Prevents overfitting)
-    -   `Dense (Softmax)` (Final classification)
-3.  **Training Strategy**:
-    -   **Stage 1**: Train only the head (30 epochs, LR=1e-3).
-    -   **Stage 2**: Unfreeze top 30 layers of MobileNetV2 and fine-tune (15 epochs, LR=1e-5).
+---
 
-## 🛠️ Installation & Usage
+## 📖 **THE STORY: A JOURNEY OF CHALLENGES & SOLUTIONS** 📖
 
-### 1. Clone the repository
-```bash
-git clone <your-repo-url>
-cd "project 45 logo CNN"
+> **"This project wasn't just about building a model—it was about overcoming real-world ML obstacles and discovering how AI can accelerate development."**
+
+This README tells the authentic story of how `Brand-Spotter` was built, the **hardships faced**, the **lessons learned**, and how **AI-powered coding (Antigravity)** transformed the development process.
+
+---
+
+## 🚧 **THE PROBLEM VS THE SOLUTION** 🚧
+
+<p align="center">
+  <img src="assets/image copy 2.png" alt="Challenge vs Solution" width="700"/>
+</p>
+
+<table>
+<tr>
+<td width="50%">
+
+### 😰 **The Initial Challenge**
+
+When I started this project, I had a simple goal:
+> *Build a CNN to classify logos (Facebook, Google, Nike, YouTube).*
+
+But there was a **massive problem**:
+
+| 🔴 Challenge | Impact |
+|-------------|--------|
+| **Only ~14 images per class** | Not enough data for a CNN to learn |
+| **Custom CNN from scratch** | Overfitting within 5 epochs |
+| **Validation accuracy stuck at ~60%** | Model was guessing, not learning |
+
+**The harsh reality**: Deep learning typically needs **thousands** of images per class. I had **14**. 💀
+
+</td>
+<td width="50%">
+
+### ❓ **Why It Failed**
+
+My first approach was a **simple custom CNN**:
+
+```python
+# ❌ MY ORIGINAL (FAILED) APPROACH
+x = layers.Conv2D(32, 3, activation="relu")(x)
+x = layers.MaxPooling2D(2)(x)
+x = layers.Conv2D(64, 3, activation="relu")(x)
+x = layers.MaxPooling2D(2)(x)
+x = layers.Conv2D(128, 3, activation="relu")(x)
+x = layers.Flatten()(x)  # ← MISTAKE!
+x = layers.Dense(128, activation="relu")(x)
 ```
 
-### 2. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+**What went wrong:**
+- ❌ Training from scratch with 14 images
+- ❌ Using `Flatten()` (huge parameters, no spatial info)
+- ❌ Weak data augmentation
+- ❌ No callbacks (early stopping, LR scheduling)
+- ❌ Single-stage training
 
-### 3. Run the App
-```bash
-streamlit run app.py
-```
+**Result**: Model memorized training data → failed on validation.
 
-## 📂 Project Structure
+</td>
+</tr>
+</table>
 
-```
-project 45 logo CNN/
-├── app.py                  # Main Streamlit Application
-├── main_new.ipynb         # Improved Training Notebook (Transfer Learning)
-├── main.ipynb             # Original Training Experiment
-├── logo_classifier_final.keras  # Saved Trained Model
-├── requirements.txt       # Project Dependencies
-└── data/                  # Dataset Directory
-    └── logos_small/       # Train/Val Split
-```
-
-## 📊 Supported Brands
-- Facebook
-- Google
-- Nike
-- YouTube
-
-## 🤝 Contributing
-Feel free to open issues or submit pull requests if you want to add more brands to the dataset!
-
+---
