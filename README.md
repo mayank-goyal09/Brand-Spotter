@@ -90,3 +90,65 @@ x = layers.Dense(128, activation="relu")(x)
 </table>
 
 ---
+
+## 💡 **THE BREAKTHROUGH: TRANSFER LEARNING** 💡
+
+<p align="center">
+  <img src="assets/image copy 4.png" alt="Transfer Learning Concept" width="700"/>
+</p>
+
+### 🧠 **The Solution: Stand on the Shoulders of Giants**
+
+Instead of training from scratch, I used **MobileNetV2** (pre-trained on 1.4 million ImageNet images). This model already knows:
+- ✅ How to detect edges, textures, shapes
+- ✅ How to recognize patterns and objects
+- ✅ General visual features that transfer to logos!
+
+```python
+# ✅ THE WINNING APPROACH
+base_model = MobileNetV2(weights="imagenet", include_top=False)
+base_model.trainable = False  # Stage 1: Freeze
+
+x = base_model(x, training=False)
+x = GlobalAveragePooling2D()(x)  # ← CORRECT!
+x = BatchNormalization()(x)
+x = Dropout(0.5)(x)
+x = Dense(num_classes, activation="softmax")(x)
+```
+
+### 🔄 **Two-Stage Training Strategy**
+
+| **Stage** | **What Happens** | **Learning Rate** |
+|-----------|------------------|-------------------|
+| **Stage 1** | Freeze MobileNetV2, train only top layers | `1e-3` (high) |
+| **Stage 2** | Unfreeze top 30 layers, fine-tune | `1e-5` (very low) |
+
+This approach prevents **catastrophic forgetting** and allows the model to adapt to logos without destroying pre-trained knowledge.
+
+---
+
+## 🔬 **HOW IT WORKS: THE PIPELINE** 🔬
+
+<p align="center">
+  <img src="assets/image copy.png" alt="Image Classification Pipeline" width="800"/>
+</p>
+
+### **Pipeline Breakdown:**
+
+1️⃣ **Raw Logo Images** → Input dataset with 4 brand classes  
+2️⃣ **Data Augmentation** → Rotation, flip, zoom, contrast adjustments  
+3️⃣ **MobileNetV2** → Pre-trained feature extraction backbone  
+4️⃣ **Fine-tuning** → Transfer learning + optimize weights  
+5️⃣ **Prediction Output** → 98% confidence classification  
+
+---
+
+## 🧠 **THE NEURAL NETWORK BRAIN** 🧠
+
+<p align="center">
+  <img src="assets/image copy 3.png" alt="Neural Network Brain" width="600"/>
+</p>
+
+The model learns to recognize brand logos by leveraging patterns learned from millions of ImageNet images. The neural network acts as an intelligent "brain" that can identify visual patterns unique to each brand.
+
+---
