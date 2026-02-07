@@ -152,3 +152,65 @@ This approach prevents **catastrophic forgetting** and allows the model to adapt
 The model learns to recognize brand logos by leveraging patterns learned from millions of ImageNet images. The neural network acts as an intelligent "brain" that can identify visual patterns unique to each brand.
 
 ---
+
+## 🛠️ **TECH STACK** 🛠️
+
+![Tech Stack](https://skillicons.dev/icons?i=python,tensorflow,github,vscode,git)
+
+| **Category** | **Technologies** |
+|--------------|------------------|
+| 🐍 **Language** | Python 3.10+ |
+| 🧠 **Deep Learning** | TensorFlow 2.x, Keras |
+| 🏗️ **Architecture** | MobileNetV2 (Transfer Learning) |
+| 🎨 **Frontend** | Streamlit (Glassmorphism UI) |
+| 📊 **Visualization** | Matplotlib, Plotly |
+| 🔧 **Preprocessing** | Pillow, NumPy |
+| 🚀 **Deployment** | Streamlit Cloud |
+
+---
+
+## 📂 **PROJECT STRUCTURE** 📂
+
+```
+🔍 Brand-Spotter/
+│
+├── 📁 assets/                     # README images
+├── 📁 data/logos_small/           # Dataset (Train/Val splits)
+│   ├── train/                     # Training images by class
+│   └── val/                       # Validation images by class
+├── 🎨 app.py                      # Streamlit web application
+├── 📓 main_new.ipynb              # Improved training notebook (Transfer Learning)
+├── 📓 main.ipynb                  # Original failed experiment
+├── 🧠 logo_classifier_final.keras # Trained model file
+├── 📦 requirements.txt            # Dependencies
+└── 📖 README.md                   # You are here! 🎉
+```
+
+---
+
+## 🚀 **QUICK START** 🚀
+
+### **Step 1: Clone the Repository** 📥
+
+```bash
+git clone https://github.com/mayank-goyal09/Brand-Spotter.git
+cd Brand-Spotter
+```
+
+### **Step 2: Install Dependencies** 📦
+
+```bash
+pip install -r requirements.txt
+```
+
+### **Step 3: Run the App** 🎯
+
+```bash
+streamlit run app.py
+```
+
+### **Step 4: Open in Browser** 🌐
+
+The app will open at: **`http://localhost:8501`**
+
+---
